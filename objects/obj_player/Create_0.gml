@@ -1,6 +1,6 @@
 array_push(global.players, self);
 
-player_id = 0;
+// player_id = 0;
 
 for(var i = 0; i<array_length(global.players); i++){
 	var _plyr = array_get(global.players, i);

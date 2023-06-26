@@ -12,6 +12,10 @@ repeat(INPUT_MAX_PLAYERS) {
 	 ++_i;
 }
 
+if(_str == ""){
+	_str = "Press any key in keyboard or any button in gamepad";
+}
+
 draw_text(0, 0, _str);
 
 
