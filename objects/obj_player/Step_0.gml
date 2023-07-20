@@ -84,3 +84,15 @@ else if (input_check("shoot", player_id))
     //    direction = other.aim_direction;
     //}
 }
+
+
+if(input_check_pressed("pause", player_id)){
+	if(!instance_exists(obj_pause_menu)){
+		var inst = instance_create_layer(x, y, "Instances", obj_pause_menu);
+		inst.Init();
+	} else {
+		with(obj_pause_menu){
+			instance_destroy();
+		}
+	}
+}

@@ -22,5 +22,32 @@ xy_damping = 0.90;
 
 shoot_timer = 0;
 
+input_verbs = [
+
+	{
+		name: "up",
+	},
+	{
+		name: "down",
+	},
+	{
+		name: "left",
+	},
+	{
+		name: "right",
+	}
+
+]
+
+
+for(var i=0;i<array_length(input_verbs); i++){
+	var input_verb = array_get(input_verbs, i);
+	var current_input_ = input_binding_get(input_verb.name, player_id);
+	sd("Input name: ", input_verb.name, " - current binding: ", current_input_);
+	input_verb.default_input = current_input_;
+	input_verb.current_input = current_input_;
+	
+}
+
 //Remove the mouse cursor since it'll get in the way whilst aiming
-window_set_cursor(cr_none);
+// window_set_cursor(cr_none);
