@@ -87,12 +87,24 @@ else if (input_check("shoot", player_id))
 
 
 if(input_check_pressed("pause", player_id)){
+	sd("pause player_id: ", player_id);
 	if(!instance_exists(obj_pause_menu)){
 		var inst = instance_create_layer(x, y, "Instances", obj_pause_menu);
+		inst.player_id = player_id;
 		inst.Init();
 	} else {
 		with(obj_pause_menu){
-			instance_destroy();
+			
+			var is_collision = false;
+			for(var i=0;i<array_length(input_verbs);i++){
+				var iv = array_get(input_verbs, i);
+				if(iv.next_binding == -1){
+					is_collision = true;
+				}
+			}
+			if(is_collision){
+				sd("cannot exit, collision controll detected");
+			} else 	instance_destroy();
 		}
 	}
 }

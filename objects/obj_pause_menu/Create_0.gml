@@ -6,9 +6,13 @@
 
 depth = obj_input_manager.depth - 1
 
+global.current_hover = -1;
+
 Init = function(){
 	
-	player_id = 0;
+	is_collision = false
+	hover_reset_button = false;
+	// player_id = 0;
 	
 	// input_verbs
 	// player_input

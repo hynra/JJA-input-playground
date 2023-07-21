@@ -31,10 +31,10 @@ return {
     
     gamepad:
     {
-        up:    [input_binding_gamepad_axis(gp_axislv, true),  input_binding_gamepad_button(gp_padu)],
-        down:  [input_binding_gamepad_axis(gp_axislv, false), input_binding_gamepad_button(gp_padd)],
-        left:  [input_binding_gamepad_axis(gp_axislh, true),  input_binding_gamepad_button(gp_padl)],
-        right: [input_binding_gamepad_axis(gp_axislh, false), input_binding_gamepad_button(gp_padr)],
+        up:    [input_binding_gamepad_button(gp_padu), input_binding_gamepad_axis(gp_axislv, true)],
+        down:  [input_binding_gamepad_button(gp_padd), input_binding_gamepad_axis(gp_axislv, false)],
+        left:  [input_binding_gamepad_button(gp_padl), input_binding_gamepad_axis(gp_axislh, true)],
+        right: [input_binding_gamepad_button(gp_padr), input_binding_gamepad_axis(gp_axislh, false)],
         
         accept:  input_binding_gamepad_button(gp_face1),
         cancel:  input_binding_gamepad_button(gp_face2),
